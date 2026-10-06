@@ -1,25 +1,27 @@
 package com.example.gitdemo.Calculate;
 
-public class ScientificCalculator implements Calculator {
+public class ScientificCalculator implements ArithmeticOperations, ScientificOperations {
+
+    private final ArithmeticOperations arithmetic = new BasicCalculator();
 
     @Override
     public double add(double a, double b) {
-        return a + b;
+        return arithmetic.add(a, b);
     }
 
     @Override
     public double subtract(double a, double b) {
-        return a - b;
+        return arithmetic.subtract(a, b);
     }
 
     @Override
     public double multiply(double a, double b) {
-        return a * b;
+        return arithmetic.multiply(a, b);
     }
 
     @Override
     public double divide(double a, double b) {
-        return a / b;
+        return arithmetic.divide(a, b);
     }
 
     @Override
@@ -40,20 +42,5 @@ public class ScientificCalculator implements Calculator {
     @Override
     public double cos(double number) {
         return Math.cos(number);
-    }
-
-    @Override
-    public int and(int a, int b) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public int or(int a, int b) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public int xor(int a, int b) {
-        throw new UnsupportedOperationException();
     }
 }

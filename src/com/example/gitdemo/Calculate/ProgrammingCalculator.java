@@ -1,45 +1,27 @@
 package com.example.gitdemo.Calculate;
 
-public class ProgrammingCalculator implements Calculator {
+public class ProgrammingCalculator implements ArithmeticOperations, BitwiseOperations {
+
+    private final ArithmeticOperations arithmetic = new BasicCalculator();
 
     @Override
     public double add(double a, double b) {
-        return a + b;
+        return arithmetic.add(a, b);
     }
 
     @Override
     public double subtract(double a, double b) {
-        return a - b;
+        return arithmetic.subtract(a, b);
     }
 
     @Override
     public double multiply(double a, double b) {
-        return a * b;
+        return arithmetic.multiply(a, b);
     }
 
     @Override
     public double divide(double a, double b) {
-        return a / b;
-    }
-
-    @Override
-    public double sqrt(double number) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public double log(double number) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public double sin(double number) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public double cos(double number) {
-        throw new UnsupportedOperationException();
+        return arithmetic.divide(a, b);
     }
 
     @Override
